@@ -1,8 +1,6 @@
 name: Publish docs via GitHub Pages(mdbook)
-on:
-  push:
-    branches:
-      - main
+
+on: workflow_dispatch
 
 jobs:
   deploy:
@@ -12,6 +10,8 @@ jobs:
       group: ${{ github.workflow }}-${{ github.ref }}
     steps:
       - uses: actions/checkout@v2
+        with:
+          ref: my-branch
 
       - name: Setup mdBook
         uses: peaceiris/actions-mdbook@v1
