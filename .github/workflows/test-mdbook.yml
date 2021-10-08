@@ -1,4 +1,4 @@
-name: Publish docs via GitHub Pages(mdbook)
+name: Mdbook generate docs
 
 on: workflow_dispatch
 
@@ -6,8 +6,6 @@ jobs:
   deploy:
     name: Deploy docs by mdbook
     runs-on: ubuntu-latest
-    concurrency:
-      group: ${{ github.workflow }}-${{ github.ref }}
     steps:
       - uses: actions/checkout@v2
         with:
