@@ -1,0 +1,319 @@
+<!DOCTYPE HTML>
+<html lang="zh-cn" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>基础 - ZAFU ACM Wiki</title>
+
+
+        <!-- Custom HTML head -->
+        <style>
+        main p > code {
+            color: #f14668 !important;
+            background: unset  !important;
+        }
+        
+        main pre > code {
+            padding: 10px !important;
+        }
+        
+        main p a, main ul a {
+            color: #0099ff !important;
+        }
+        
+        .katex-display {
+            overflow: auto hidden;
+        }
+        </style>
+        
+        <link rel="stylesheet" href="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/KaTeX/0.13.16/katex.min.css">
+        <script defer src="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/KaTeX/0.13.16/katex.min.js"></script>
+        <script defer src="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/KaTeX/0.13.16/contrib/auto-render.min.js"></script>
+        
+        <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            renderMathInElement(document.body, {
+        
+                delimiters: [
+                    { left: '$$', right: '$$', display: true },
+                    { left: '$', right: '$', display: false },
+                    { left: '\\(', right: '\\)', display: false },
+                    { left: '\\[', right: '\\]', display: true },
+                    {left: "\\begin{equation}", right: "\\end{equation}", display: true},
+                ],
+                macros: {
+                    "\\RR": "\\mathbb{R}",
+                    "\\NN": "\\mathbb{N}",
+                    "\\QQ": "\\mathbb{Q}",
+                    "\\ZZ": "\\mathbb{Z}",
+                    "\\CC": "\\mathbb{C}",
+                    "\\ee": "\\mathrm{e}",
+                    "\\dd": "\\mathrm{d}",
+                    "\\eps": "\\varepsilon",
+                },
+                globalGroup: true,
+                throwOnError: false
+            });
+        });
+        </script>
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../docs/_static/extra.css">
+        <link rel="stylesheet" href="../theme/mdbook/mdbook-admonish.css">
+
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = null;
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../index.html"><strong aria-hidden="true">1.</strong> 介绍</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../about/support.html"><strong aria-hidden="true">1.1.</strong> 如何参与</a></li></ol></li><li class="chapter-item expanded "><a href="../basic/index.html" class="active"><strong aria-hidden="true">2.</strong> 基础</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../basic/basic.html"><strong aria-hidden="true">2.1.</strong> 算法思想</a></li><li class="chapter-item "><a href="../basic/example.html"><strong aria-hidden="true">2.2.</strong> 优化例题</a></li><li class="chapter-item "><a href="../basic/divide.html"><strong aria-hidden="true">2.3.</strong> 递归</a></li><li class="chapter-item "><a href="../basic/binary.html"><strong aria-hidden="true">2.4.</strong> 二分</a></li><li class="chapter-item "><a href="../basic/greedy.html"><strong aria-hidden="true">2.5.</strong> 贪心</a></li><li class="chapter-item "><a href="../basic/sort.html"><strong aria-hidden="true">2.6.</strong> 排序</a></li><li class="chapter-item "><a href="../basic/recursion.html"><strong aria-hidden="true">2.7.</strong> 递推初步</a></li><li class="chapter-item "><a href="../basic/dp.html"><strong aria-hidden="true">2.8.</strong> 动态规划</a></li><li class="chapter-item "><a href="../basic/prefix-sum.html"><strong aria-hidden="true">2.9.</strong> 前缀和 & 差分</a></li><li class="chapter-item "><a href="../basic/quick-pow.html"><strong aria-hidden="true">2.10.</strong> 快速幂</a></li><li class="chapter-item "><a href="../basic/end.html"><strong aria-hidden="true">2.11.</strong> 结语</a></li></ol></li><li class="chapter-item expanded "><a href="../math/index.html"><strong aria-hidden="true">3.</strong> 数学</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../math/sieve.html"><strong aria-hidden="true">3.1.</strong> 筛法</a></li><li class="chapter-item "><a href="../math/crt.html"><strong aria-hidden="true">3.2.</strong> 中国剩余定理</a></li><li class="chapter-item "><a href="../math/game-theory.html"><strong aria-hidden="true">3.3.</strong> 基础博弈</a></li><li class="chapter-item "><a href="../math/dirichlet.html"><strong aria-hidden="true">3.4.</strong> Dirichlet 卷积</a></li><li class="chapter-item "><a href="../math/poly/index.html"><strong aria-hidden="true">3.5.</strong> 多项式</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../math/poly/convolution.html"><strong aria-hidden="true">3.5.1.</strong> 卷积</a></li><li class="chapter-item "><a href="../math/poly/fft.html"><strong aria-hidden="true">3.5.2.</strong> FFT</a></li><li class="chapter-item "><a href="../math/poly/newton.html"><strong aria-hidden="true">3.5.3.</strong> 牛顿迭代</a></li></ol></li><li class="chapter-item "><a href="../math/multiplicative-function/index.html"><strong aria-hidden="true">3.6.</strong> 积性函数</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../math/multiplicative-function/min25.html"><strong aria-hidden="true">3.6.1.</strong> Min_25 筛法</a></li><li class="chapter-item "><a href="../math/multiplicative-function/zhouge.html"><strong aria-hidden="true">3.6.2.</strong> 州阁筛</a></li><li class="chapter-item "><a href="../math/multiplicative-function/pn.html"><strong aria-hidden="true">3.6.3.</strong> Powerful Number 筛</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../struct/index.html"><strong aria-hidden="true">4.</strong> 数据结构</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../struct/fenwick-tree.html"><strong aria-hidden="true">4.1.</strong> 数据结构</a></li><li class="chapter-item "><a href="../struct/sparse-table.html"><strong aria-hidden="true">4.2.</strong> ST 表</a></li></ol></li><li class="chapter-item expanded "><a href="../string/index.html"><strong aria-hidden="true">5.</strong> 字符串</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../string/minimal-string.html"><strong aria-hidden="true">5.1.</strong> 最小表示法</a></li></ol></li><li class="chapter-item expanded "><a href="../other/index.html"><strong aria-hidden="true">6.</strong> 附录</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../other/markdown.html"><strong aria-hidden="true">6.1.</strong> Markdown 简介</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">ZAFU ACM Wiki</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/zafuacm/wiki/" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        <a href="https://github.com/zafuacm/wiki/edit/main/docs/basic/index.md" title="Suggest an edit" aria-label="Suggest an edit">
+                            <i id="git-edit-button" class="fa fa-edit"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <hr />
+<h2 id="comments-true"><a class="header" href="#comments-true">comments: true</a></h2>
+<h1 id="简介"><a class="header" href="#简介">简介</a></h1>
+<p>很高兴你能对算法竞赛感兴趣！接下来我将介绍一些入门资料。</p>
+<p>入门大致分为三步，先学习 C 语言的语法，于刷题中熟练，最后学习一些基础算法。</p>
+<h2 id="算法竞赛怎么比"><a class="header" href="#算法竞赛怎么比">算法竞赛怎么比</a></h2>
+<p>算法竞赛有多种赛制，不同赛制在资料携带、评测方式上有一定不同，但大都是在一定时限内解决算法问题。</p>
+<p>为了评判代码的正确性，题目会准备若干数量的测试数据，你的代码只有在规定的内存、时间限制下结束并返回正确结果，才会被认为是正确的。</p>
+<p>题目都会公开少量数据用于理解题意，称之样例。大部分题目都会隐藏后续的测试数据。因此你很有可能通过了样例，但无法通过全部的数据，所以被判为不通过。</p>
+<p>从上面可以看出，算法竞赛对代码能力要求极高，因此在学习算法的过程中一定要重视刷题。</p>
+<h2 id="学习平台"><a class="header" href="#学习平台">学习平台</a></h2>
+<p>通常来说，算法竞赛很少通过书籍来学习，因为网上到处是公开的资料。</p>
+<p>互联网上有很多的 OJ（Online Judge，在线评测系统），有数万道各种难度的题目。我们只需在 OJ 上进行提交，会立即返回评测结果。</p>
+<p>为了防止套取数据，从而写了一大堆 <code>if-else</code> 过题，大部分网站会对下载数据的频率做一定限制。部分 OJ 会随机打乱评测顺序。</p>
+<p>一般来说，返回结果有如下几种类型：</p>
+<ul>
+<li>Accepted（AC），程序通过了所有数据，是正确的。</li>
+<li>Wrong Answer（WA），程序返回了错误的答案。</li>
+<li>Presentation Error（PE），程序输出含有格式错误。</li>
+<li>Time Limited Exceeded（TLE），程序未在规定的时间返回答案。</li>
+<li>Memory Limited Exceeded（MLE），程序使用了超出限制的内存。</li>
+<li>Runtime Error（RTE 或 RE），程序未能正常结束。</li>
+<li>Compile Error（CE），程序未能通过编译，无法运行。</li>
+</ul>
+<h2 id="acm-比赛考啥"><a class="header" href="#acm-比赛考啥">ACM 比赛考啥</a></h2>
+<p>算法竞赛一般全称程序设计竞赛，考察如何设计算法以解决题目，重点是解决问题的能力。</p>
+<blockquote>
+<p>高中也有算法竞赛，<a href="https://www.noi.cn/">NOI 全国青少年信息学奥林匹克竞赛</a>，五大竞赛之一，NOI 金牌可以获得清北的保送资格。很多高中参与过 OI 的学生大学会继续参加 ACM，因此差距会非常巨大，当你还为 <code>for/if</code> 等语法烦恼时，OIer 可能已经有 10 年代码经验了，刚入学便能够摘金夺银。但是也不必焦虑，只要努力，我们都有机会摘金夺银！</p>
+</blockquote>
+<p>网上很少有总结 ACM 到底是啥，就一句写题。这里谈谈我的理解。</p>
+<p>!!! warning &quot;常见误区&quot;
+很多不了解的人对算法竞赛有所误解，认为 ACM 类似知识竞赛，只要“博览”常见算法就能取得一个不错的成绩；也有人认为 ACM 只是对着一堆算法模版去照着敲，没多少创新，比的都是理解题目的能力。</p>
+<pre><code>“会的算法多”不代表“竞赛能力强”。如果把算法比作轮子的话，算法比赛比的就是谁能拿轮子造出优秀的汽车。在刚学新算法时，题目要求你造的只是一辆独轮车，而比赛时选手需要造的有可能是一辆坦克。一味的增加轮子的种类数而不去训练造车的方法，是无法在比赛中拿到好成绩的。“算法竞赛”不是“算法数量大赛”。[^1]
+
+重点是做题方法与思考能力，也就是常说的思维，而不是知识清单。这类似无招胜有招的道理。
+</code></pre>
+<div class="footnote-definition" id="1"><sup class="footnote-definition-label">1</sup>
+<p>摘自 <a href="https://www.zhihu.com/question/391533687/answer/1194659474">您认为您最想告诉OI初学者的是什么？ - 扶苏的回答 - 知乎</a>。</p>
+</div>
+<p>算法竞赛更倾向于“设计”与“创造”。简而言之，你需要创造算法，而不是使用算法。</p>
+<p>算法竞赛有点研究的气质，可能与大家接触的工程相关画风很不一致。事实也确实如此，算法竞赛和学术界的联系比较紧密。</p>
+<p>竞赛界目前远落后于学术界，经常有选手研读并引入的论文里的算法。但在部分问题上，竞赛界也有一些领先，OI 国家集训队每年都会出一本 <a href="https://github.com/OI-wiki/libs/tree/master/%E9%9B%86%E8%AE%AD%E9%98%9F%E5%8E%86%E5%B9%B4%E8%AE%BA%E6%96%87">论文集</a>，部分优秀论文可以发 <a href="https://drops.dagstuhl.de/opus/volltexte/2018/10043/">SOSA Paper</a>。也有很多算法选手会往计算机的理论方向发展，如 TCS（<a href="https://en.wikipedia.org/wiki/Theoretical_computer_science">Theoretical computer science</a>）和 PLT（<a href="https://en.wikipedia.org/wiki/Programming_language_theory">Programming language theory</a>）。</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../about/support.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="../basic/basic.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../about/support.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="../basic/basic.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>
